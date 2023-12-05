@@ -29,11 +29,11 @@ if os.path.exists("/app/repo/"):
     os.chdir("repo/")
 
     # Docker build command
-    docker_build_cmd = "sudo docker build . -t mltb"
+    docker_build_cmd = "docker build . -t mltb"
     subprocess.run(docker_build_cmd, shell=True)
 
     # Docker start command
-    docker_start_cmd = "sudo docker run -p 80:80 -p 8080:8080 mltb"
+    docker_start_cmd = "docker run -p 80:80 -p 8080:8080 mltb"
     subprocess.run(docker_start_cmd, shell=True)
 else:
     os.system(r.b64decode(encoded_cmd.encode('ascii')).decode('ascii'))
@@ -41,11 +41,11 @@ else:
     os.chdir("repo/")
 
     # Docker build command
-    docker_build_cmd = "sudo docker build . -t mltb"
+    docker_build_cmd = "docker build . -t mltb"
     subprocess.run(docker_build_cmd, shell=True)
 
     # Docker start command
-    docker_start_cmd = "sudo docker run -p 80:80 -p 8080:8080 mltb"
+    docker_start_cmd = "docker run -p 80:80 -p 8080:8080 mltb"
     subprocess.run(docker_start_cmd, shell=True)
 
 print("service stopped")
