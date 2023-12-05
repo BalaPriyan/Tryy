@@ -3,8 +3,8 @@ import os
 
 # Replace these variables with your GitHub repository URL and run command
 repo_url = "https://github.com/BalaPriyan/"
-docker_build_cmd = "docker build -t my_image ."
-docker_run_cmd = "docker run my_image"
+docker_build_cmd = "sudo docker build . -t mltb"
+docker_run_cmd = "sudo docker run -p 80:80 -p 8080:8080 mltb"
 
 # Clone the GitHub repository
 subprocess.run(f"git clone {repo_url}", shell=True)
