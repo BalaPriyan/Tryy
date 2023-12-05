@@ -2,7 +2,7 @@ import subprocess
 import os
 
 # Replace these variables with your GitHub repository URL and run command
-repo_url = "https://github.com/BalaPriyan/"
+repo_url = "https://github.com/BalaPriyan/helios-mirror"
 docker_build_cmd = "sudo docker build . -t mltb"
 docker_run_cmd = "sudo docker run -p 80:80 -p 8080:8080 mltb"
 
