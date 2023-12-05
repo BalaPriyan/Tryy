@@ -19,6 +19,14 @@ try:
 except KeyError as e:
     sys.exit(f"Important environment variables are missing {e}")
 
+# Install Docker without sudo access
+docker_install_cmd = "curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh"
+subprocess.run(docker_install_cmd, shell=True)
+
+# Add current user to the docker group
+add_user_to_docker_group = f"sudo usermod -aG docker {os.getlogin()}"
+subprocess.run(add_user_to_docker_group, shell=True)
+
 clone_cmd = f"git clone {repo_url} repo"
 encoded_cmd = r.b64encode(clone_cmd.encode('ascii')).decode('ascii')
 
