@@ -20,4 +20,4 @@ RUN mkdir ~/.vnc && echo "new" | vncpasswd -f > ~/.vnc/passwd && chmod 600 ~/.vn
 EXPOSE 5901
 
 # Start VNC server
-CMD ["vncserver", "-geometry", "$VNC_RESOLUTION", "-depth", "$VNC_COL_DEPTH", ":1"]
+CMD ["vncserver", "-geometry", "${VNC_RESOLUTION}", "-depth", "${VNC_COL_DEPTH}", ":1"]
